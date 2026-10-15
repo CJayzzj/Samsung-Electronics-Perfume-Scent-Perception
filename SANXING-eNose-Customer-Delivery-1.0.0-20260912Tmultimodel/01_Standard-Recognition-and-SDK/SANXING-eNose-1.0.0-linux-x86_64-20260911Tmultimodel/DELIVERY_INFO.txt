@@ -1,0 +1,8 @@
+delivery=SANXING-eNose
+version=1.0.0
+delivery_id=20260911Tmultimodel
+created_at_utc=2026-09-11T11:23:53Z
+architecture=x86_64
+component_demo=sanxing-enose-demo-1.0.0-linux-x86_64-20260911Tmultimodel
+component_inference_service=sanxing-enose-inference-service-1.0.0-linux-x86_64-20260911Tmultimodel
+component_device_sdk=sanxing-enose-device-sdk-1.0.0-linux-x86_64-20260904T122017Z

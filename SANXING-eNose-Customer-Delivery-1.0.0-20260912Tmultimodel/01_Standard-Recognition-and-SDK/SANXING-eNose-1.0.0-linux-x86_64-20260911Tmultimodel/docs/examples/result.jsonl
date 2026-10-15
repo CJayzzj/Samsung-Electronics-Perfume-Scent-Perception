@@ -1,0 +1,2 @@
+{"type":"frame_response","sequence":12345,"gate_score":0.324284,"event_peak_score":null,"result":null}
+{"type":"frame_response","sequence":12348,"gate_score":0.324284,"event_peak_score":1.226145,"result":{"event_id":"E000031","class_code":"P02","label":"LEDIX","response_time_s":9.0}}

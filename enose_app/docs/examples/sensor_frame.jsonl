@@ -1,0 +1,1 @@
+{"schema":"enose.runtime.v1","protocol_version":1,"type":"sensor_frame","device_id":"回流1","sequence":12345,"timestamp_ms":1786000000000,"resistance":[10.21,9.85,11.02,10.44,9.76,10.18,11.31,10.05,8.92,9.14,10.67,11.08,9.53,10.26,10.91,9.87],"temperature_c":25.36,"humidity_rh":61.42}

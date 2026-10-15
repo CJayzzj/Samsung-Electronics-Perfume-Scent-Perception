@@ -1,0 +1,4807 @@
+{
+  "schema": "enose.cascade_training_report.v1",
+  "model_id": "samsung-cascade-20260821-gz-rbf-svm-c1-full-day-gbt-v1",
+  "created_at": "2026-08-21T17:06:13+08:00",
+  "source_files": {
+    "perfume_morning": "E:\\1.code\\pythonproject-GasSensor\\gongsi\\SANXING\\JL_sys_v3_6\\data\\datasets\\回流1\\8月最优4类\\model用的\\回流1_20260817-香水训练集.xlsx",
+    "perfume_afternoon": "E:\\1.code\\pythonproject-GasSensor\\gongsi\\SANXING\\JL_sys_v3_6\\data\\datasets\\回流1\\8月最优4类\\model用的\\回流1_20260817-香水测试集.xlsx",
+    "cigarette": "E:\\1.code\\pythonproject-GasSensor\\gongsi\\SANXING\\JL_sys_v3_6\\data\\datasets\\回流1\\8月最优4类\\model用的\\回流1_20260821_香烟.xlsx",
+    "perfume_model": "E:\\1.code\\pythonproject-GasSensor\\gongsi\\SANXING\\enose_app\\model_candidates\\0817_full_day_gbt\\model.joblib"
+  },
+  "data_split": {
+    "temporal_train": "0817上午80条香水 + 0821香烟时间前12条",
+    "temporal_validation": "0817下午40条香水 + 0821香烟时间后6条",
+    "final_fit": "120条香水 + 18条香烟"
+  },
+  "feature_parity": {
+    "centered": {
+      "morning": {
+        "available": true,
+        "max_abs_error": 4.440892098500626e-16
+      },
+      "afternoon": {
+        "available": true,
+        "max_abs_error": 4.440892098500626e-16
+      },
+      "cigarette": {
+        "available": true,
+        "max_abs_error": 1.1102230246251565e-16
+      }
+    },
+    "group_zscore": {
+      "morning": {
+        "available": true,
+        "max_abs_error": 9.992007221626409e-15
+      },
+      "afternoon": {
+        "available": true,
+        "max_abs_error": 4.551914400963142e-15
+      },
+      "cigarette": {
+        "available": true,
+        "max_abs_error": 5.495603971894525e-15
+      }
+    }
+  },
+  "comparison_count": 66,
+  "model_comparisons": [
+    {
+      "feature_mode": "centered",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5913842848007851,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.5913842848017851,
+        "oof_cigarette_probability_max": 0.766410945969394,
+        "probability_gap": -0.1750266611676089
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.5913842848017851,
+        "cigarette_probability_max": 0.766410945969394
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.7899347565311328,
+        "cigarette_probability_max": 0.47362140678453235
+      },
+      "temporal_validation_probability_gap": 0.3163133497466004
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.731211531365274,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.7312115313662739,
+        "oof_cigarette_probability_max": 0.9480914799654085,
+        "probability_gap": -0.21687994859913462
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.7312115313662739,
+        "cigarette_probability_max": 0.9480914799654085
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9142688875240796,
+        "cigarette_probability_max": 0.3021639337449459
+      },
+      "temporal_validation_probability_gap": 0.6121049537791338
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8884416408440349,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8884416408450349,
+        "oof_cigarette_probability_max": 0.9954725146800383,
+        "probability_gap": -0.10703087383500343
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8884416408450349,
+        "cigarette_probability_max": 0.9954725146800383
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9710023006356715,
+        "cigarette_probability_max": 0.13947882604872464
+      },
+      "temporal_validation_probability_gap": 0.8315234745869469
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 10.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.9641620189131729,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.9641620189141729,
+        "oof_cigarette_probability_max": 0.9998149833153602,
+        "probability_gap": -0.03565296440118737
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.9641620189141729,
+        "cigarette_probability_max": 0.9998149833153602
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9932237709178641,
+        "cigarette_probability_max": 0.04243365480635297
+      },
+      "temporal_validation_probability_gap": 0.9507901161115111
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 100.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.989800267405578,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.989800267406578,
+        "oof_cigarette_probability_max": 0.9999953447867995,
+        "probability_gap": -0.010195077380221518
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.989800267406578,
+        "cigarette_probability_max": 0.9999953447867995
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9989125617781687,
+        "cigarette_probability_max": 0.007867156015386456
+      },
+      "temporal_validation_probability_gap": 0.9910454057627822
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 0.1,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.7742478848028187,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.94420029189963,
+        "oof_cigarette_probability_max": 0.6042954777060076,
+        "probability_gap": 0.3399048141936224
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.94420029189963,
+        "cigarette_probability_max": 0.6042954777060076
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            23,
+            17
+          ]
+        ],
+        "perfume_accept": 17,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.425,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 23,
+        "total": 46,
+        "accuracy": 0.5,
+        "perfume_probability_min": 0.07958139331604727,
+        "cigarette_probability_max": 0.026641275693511084
+      },
+      "temporal_validation_probability_gap": 0.052940117622536184
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 0.1,
+        "gamma": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8940673383020714,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8940673383030714,
+        "oof_cigarette_probability_max": 0.968209656004392,
+        "probability_gap": -0.07414231770132063
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8940673383030714,
+        "cigarette_probability_max": 0.968209656004392
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            5,
+            35
+          ]
+        ],
+        "perfume_accept": 35,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.875,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 41,
+        "total": 46,
+        "accuracy": 0.8913043478260869,
+        "perfume_probability_min": 0.35531007171225487,
+        "cigarette_probability_max": 0.29118758081690704
+      },
+      "temporal_validation_probability_gap": 0.06412249089534783
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 0.1,
+        "gamma": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.7397880264787577,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.961576420808867,
+        "oof_cigarette_probability_max": 0.5179996321486484,
+        "probability_gap": 0.44357678866021855
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.961576420808867,
+        "cigarette_probability_max": 0.5179996321486484
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            27,
+            13
+          ]
+        ],
+        "perfume_accept": 13,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.325,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 19,
+        "total": 46,
+        "accuracy": 0.41304347826086957,
+        "perfume_probability_min": 0.028271748822347655,
+        "cigarette_probability_max": 0.0025893489071163074
+      },
+      "temporal_validation_probability_gap": 0.025682399915231347
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 0.1,
+        "gamma": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.9060845489619652,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.9060845489629652,
+        "oof_cigarette_probability_max": 0.938884713451648,
+        "probability_gap": -0.03280016448868284
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9060845489629652,
+        "cigarette_probability_max": 0.938884713451648
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            39
+          ]
+        ],
+        "perfume_accept": 39,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.975,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 39,
+        "total": 46,
+        "accuracy": 0.8478260869565217,
+        "perfume_probability_min": 0.8967973865515547,
+        "cigarette_probability_max": 0.9356396420123569
+      },
+      "temporal_validation_probability_gap": -0.03884225546080222
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8195398318671594,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9535412421124478,
+        "oof_cigarette_probability_max": 0.6855384216218708,
+        "probability_gap": 0.268002820490577
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9535412421124478,
+        "cigarette_probability_max": 0.6855384216218708
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            22,
+            18
+          ]
+        ],
+        "perfume_accept": 18,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.45,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 24,
+        "total": 46,
+        "accuracy": 0.5217391304347826,
+        "perfume_probability_min": 0.19250987101958258,
+        "cigarette_probability_max": 0.025339395019355462
+      },
+      "temporal_validation_probability_gap": 0.1671704760002271
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.9091976795230263,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.9091976795240263,
+        "oof_cigarette_probability_max": 0.9748995891097606,
+        "probability_gap": -0.0657019095857343
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.9091976795240263,
+        "cigarette_probability_max": 0.9748995891097606
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            34
+          ]
+        ],
+        "perfume_accept": 34,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.85,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.4817834877423718,
+        "cigarette_probability_max": 0.10520046562008126
+      },
+      "temporal_validation_probability_gap": 0.37658302212229056
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.7255861440529723,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9511722881059445,
+        "oof_cigarette_probability_max": 0.5,
+        "probability_gap": 0.45117228810594445
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9511722881059445,
+        "cigarette_probability_max": 0.5
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            23,
+            17
+          ]
+        ],
+        "perfume_accept": 17,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.425,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 23,
+        "total": 46,
+        "accuracy": 0.5,
+        "perfume_probability_min": 0.1538049140222556,
+        "cigarette_probability_max": 0.024251360500718116
+      },
+      "temporal_validation_probability_gap": 0.1295535535215375
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.45792764748156534,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.5862303454260196,
+        "oof_cigarette_probability_max": 0.329624949537111,
+        "probability_gap": 0.25660539588890857
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.5862303454260196,
+        "cigarette_probability_max": 0.329624949537111
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            30,
+            10
+          ]
+        ],
+        "perfume_accept": 10,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.25,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 16,
+        "total": 46,
+        "accuracy": 0.34782608695652173,
+        "perfume_probability_min": 0.24701113962754298,
+        "cigarette_probability_max": 0.24623800671210924
+      },
+      "temporal_validation_probability_gap": 0.0007731329154337385
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 10.0,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8215073392531503,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.953007813919063,
+        "oof_cigarette_probability_max": 0.6900068645872377,
+        "probability_gap": 0.2630009493318253
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.953007813919063,
+        "cigarette_probability_max": 0.6900068645872377
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            22,
+            18
+          ]
+        ],
+        "perfume_accept": 18,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.45,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 24,
+        "total": 46,
+        "accuracy": 0.5217391304347826,
+        "perfume_probability_min": 0.19925696239158547,
+        "cigarette_probability_max": 0.025329132044293278
+      },
+      "temporal_validation_probability_gap": 0.1739278303472922
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 10.0,
+        "gamma": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.9363602772986268,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.9363602772996268,
+        "oof_cigarette_probability_max": 0.9822802126474046,
+        "probability_gap": -0.04591993534777783
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.9363602772996268,
+        "cigarette_probability_max": 0.9822802126474046
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "perfume_accept": 30,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.75,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 36,
+        "total": 46,
+        "accuracy": 0.782608695652174,
+        "perfume_probability_min": 0.5664972462594146,
+        "cigarette_probability_max": 0.06055483362420342
+      },
+      "temporal_validation_probability_gap": 0.5059424126352111
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 10.0,
+        "gamma": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.724813182815636,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.949626365631272,
+        "oof_cigarette_probability_max": 0.5,
+        "probability_gap": 0.449626365631272
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.949626365631272,
+        "cigarette_probability_max": 0.5
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            23,
+            17
+          ]
+        ],
+        "perfume_accept": 17,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.425,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 23,
+        "total": 46,
+        "accuracy": 0.5,
+        "perfume_probability_min": 0.1546616347954325,
+        "cigarette_probability_max": 0.024239754800860186
+      },
+      "temporal_validation_probability_gap": 0.1304218799945723
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 10.0,
+        "gamma": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.45664180355427747,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.5861278488089697,
+        "oof_cigarette_probability_max": 0.3271557582995852,
+        "probability_gap": 0.2589720905093845
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.5861278488089697,
+        "cigarette_probability_max": 0.3271557582995852
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            30,
+            10
+          ]
+        ],
+        "perfume_accept": 10,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.25,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 16,
+        "total": 46,
+        "accuracy": 0.34782608695652173,
+        "perfume_probability_min": 0.24569211578597888,
+        "cigarette_probability_max": 0.2449205418477909
+      },
+      "temporal_validation_probability_gap": 0.0007715739381879694
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 100.0,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8215073392531503,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.953007813919063,
+        "oof_cigarette_probability_max": 0.6900068645872377,
+        "probability_gap": 0.2630009493318253
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.953007813919063,
+        "cigarette_probability_max": 0.6900068645872377
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            22,
+            18
+          ]
+        ],
+        "perfume_accept": 18,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.45,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 24,
+        "total": 46,
+        "accuracy": 0.5217391304347826,
+        "perfume_probability_min": 0.19925696239158547,
+        "cigarette_probability_max": 0.025329132044293278
+      },
+      "temporal_validation_probability_gap": 0.1739278303472922
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 100.0,
+        "gamma": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.938131525162004,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.938131525163004,
+        "oof_cigarette_probability_max": 0.9823651814355874,
+        "probability_gap": -0.044233656272583355
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.938131525163004,
+        "cigarette_probability_max": 0.9823651814355874
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "perfume_accept": 30,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.75,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 36,
+        "total": 46,
+        "accuracy": 0.782608695652174,
+        "perfume_probability_min": 0.5787718681709912,
+        "cigarette_probability_max": 0.0580728833726496
+      },
+      "temporal_validation_probability_gap": 0.5206989847983416
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 100.0,
+        "gamma": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.724813182815636,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.949626365631272,
+        "oof_cigarette_probability_max": 0.5,
+        "probability_gap": 0.449626365631272
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.949626365631272,
+        "cigarette_probability_max": 0.5
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            23,
+            17
+          ]
+        ],
+        "perfume_accept": 17,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.425,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 23,
+        "total": 46,
+        "accuracy": 0.5,
+        "perfume_probability_min": 0.1546616347954325,
+        "cigarette_probability_max": 0.024239754800860186
+      },
+      "temporal_validation_probability_gap": 0.1304218799945723
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 100.0,
+        "gamma": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.45664180355427747,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.5861278488089697,
+        "oof_cigarette_probability_max": 0.3271557582995852,
+        "probability_gap": 0.2589720905093845
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.5861278488089697,
+        "cigarette_probability_max": 0.3271557582995852
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            30,
+            10
+          ]
+        ],
+        "perfume_accept": 10,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.25,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 16,
+        "total": 46,
+        "accuracy": 0.34782608695652173,
+        "perfume_probability_min": 0.24569211578597888,
+        "cigarette_probability_max": 0.2449205418477909
+      },
+      "temporal_validation_probability_gap": 0.0007715739381879694
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.03,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.024642872380750004,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.024642872381750003,
+        "oof_cigarette_probability_max": 0.97535712761825,
+        "probability_gap": -0.9507142552365
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.024642872381750003,
+        "cigarette_probability_max": 0.97535712761825
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9635837724495172,
+        "cigarette_probability_max": 0.0992843061314217
+      },
+      "temporal_validation_probability_gap": 0.8642994663180955
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.03,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.024642872380750004,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.024642872381750003,
+        "oof_cigarette_probability_max": 0.97535712761825,
+        "probability_gap": -0.9507142552365
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.024642872381750003,
+        "cigarette_probability_max": 0.97535712761825
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.97535712761825,
+        "cigarette_probability_max": 0.07793826485688393
+      },
+      "temporal_validation_probability_gap": 0.8974188627613661
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.05,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.0033104507802650175,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.0033104507812650175,
+        "oof_cigarette_probability_max": 0.996689549218735,
+        "probability_gap": -0.99337909843747
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.0033104507812650175,
+        "cigarette_probability_max": 0.996689549218735
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9838199534521396,
+        "cigarette_probability_max": 0.0483155347588381
+      },
+      "temporal_validation_probability_gap": 0.9355044186933015
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.05,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.0033104507802650175,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.0033104507812650175,
+        "oof_cigarette_probability_max": 0.996689549218735,
+        "probability_gap": -0.99337909843747
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.0033104507812650175,
+        "cigarette_probability_max": 0.996689549218735
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.996689549218735,
+        "cigarette_probability_max": 0.011909548150019877
+      },
+      "temporal_validation_probability_gap": 0.9847800010687151
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.1,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 2.190173030067752e-05,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 2.1901731300677518e-05,
+        "oof_cigarette_probability_max": 0.9999780982686992,
+        "probability_gap": -0.9999561965373985
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 2.1901731300677518e-05,
+        "cigarette_probability_max": 0.9999780982686992
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9972521880544286,
+        "cigarette_probability_max": 0.008928937826444883
+      },
+      "temporal_validation_probability_gap": 0.9883232502279837
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.1,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 2.190173030067752e-05,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 2.1901731300677518e-05,
+        "oof_cigarette_probability_max": 0.9999780982686992,
+        "probability_gap": -0.9999561965373985
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 2.1901731300677518e-05,
+        "cigarette_probability_max": 0.9999780982686992
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9999780982686992,
+        "cigarette_probability_max": 0.0006514014018837999
+      },
+      "temporal_validation_probability_gap": 0.9993266968668154
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.03,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.0012264575976592474,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.0012264575986592474,
+        "oof_cigarette_probability_max": 0.9987735424013408,
+        "probability_gap": -0.9975470848026815
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.0012264575986592474,
+        "cigarette_probability_max": 0.9987735424013408
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9885318113128317,
+        "cigarette_probability_max": 0.03276323272886106
+      },
+      "temporal_validation_probability_gap": 0.9557685785839707
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.03,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.0012264575976592474,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.0012264575986592474,
+        "oof_cigarette_probability_max": 0.9987735424013408,
+        "probability_gap": -0.9975470848026815
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.0012264575986592474,
+        "cigarette_probability_max": 0.9987735424013408
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9987735424013408,
+        "cigarette_probability_max": 0.007456709974448916
+      },
+      "temporal_validation_probability_gap": 0.9913168324268918
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 2.2303788958821874e-05,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 2.2303789958821874e-05,
+        "oof_cigarette_probability_max": 0.9999776962100412,
+        "probability_gap": -0.9999553924200824
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 2.2303789958821874e-05,
+        "cigarette_probability_max": 0.9999776962100412
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9972128500676991,
+        "cigarette_probability_max": 0.008547258655336565
+      },
+      "temporal_validation_probability_gap": 0.9886655914123625
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 2.2303788958821874e-05,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 2.2303789958821874e-05,
+        "oof_cigarette_probability_max": 0.9999776962100412,
+        "probability_gap": -0.9999553924200824
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 2.2303789958821874e-05,
+        "cigarette_probability_max": 0.9999776962100412
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9999776962100412,
+        "cigarette_probability_max": 0.00026871917823689806
+      },
+      "temporal_validation_probability_gap": 0.9997089770318043
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 1.4794452196736392e-08,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 1.4795452196736392e-08,
+        "oof_cigarette_probability_max": 0.9999999852045478,
+        "probability_gap": -0.9999999704090956
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.0,
+        "correct": 80,
+        "total": 92,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 1.4795452196736392e-08,
+        "cigarette_probability_max": 0.9999999852045478
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 0,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 0.9999102239564004,
+        "cigarette_probability_max": 0.0003022826931603495
+      },
+      "temporal_validation_probability_gap": 0.99960794126324
+    },
+    {
+      "feature_mode": "centered",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 1.4794452196736392e-08,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 1.4795452196736392e-08,
+        "oof_cigarette_probability_max": 0.9999999852045478,
+        "probability_gap": -0.9999999704090956
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            4,
+            8
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 4,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.3333333333333333,
+        "correct": 84,
+        "total": 92,
+        "accuracy": 0.9130434782608695,
+        "perfume_probability_min": 1.4795452196736392e-08,
+        "cigarette_probability_max": 0.9999999852045478
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 1,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.16666666666666666,
+        "correct": 41,
+        "total": 46,
+        "accuracy": 0.8913043478260869,
+        "perfume_probability_min": 0.9999999897821564,
+        "cigarette_probability_max": 7.416369600665718e-07
+      },
+      "temporal_validation_probability_gap": 0.9999992481451964
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.3860698293680848,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.40359125503241533,
+        "oof_cigarette_probability_max": 0.3685484037037543,
+        "probability_gap": 0.03504285132866103
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.40359125503241533,
+        "cigarette_probability_max": 0.3685484037037543
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            2,
+            38
+          ]
+        ],
+        "perfume_accept": 38,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.95,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 44,
+        "total": 46,
+        "accuracy": 0.9565217391304348,
+        "perfume_probability_min": 0.016993157787052682,
+        "cigarette_probability_max": 0.35117746621398227
+      },
+      "temporal_validation_probability_gap": -0.3341843084269296
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.31165608343207707,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.3662635484874366,
+        "oof_cigarette_probability_max": 0.25704861837671755,
+        "probability_gap": 0.10921493011071903
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.3662635484874366,
+        "cigarette_probability_max": 0.25704861837671755
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            4,
+            36
+          ]
+        ],
+        "perfume_accept": 36,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.9,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 42,
+        "total": 46,
+        "accuracy": 0.9130434782608695,
+        "perfume_probability_min": 3.4947057360179556e-06,
+        "cigarette_probability_max": 0.15616336857826496
+      },
+      "temporal_validation_probability_gap": -0.15615987387252894
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.2999817312229806,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.42700947741458994,
+        "oof_cigarette_probability_max": 0.17295398503137127,
+        "probability_gap": 0.2540554923832187
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.42700947741458994,
+        "cigarette_probability_max": 0.17295398503137127
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            34
+          ]
+        ],
+        "perfume_accept": 34,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.85,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 40,
+        "total": 46,
+        "accuracy": 0.8695652173913043,
+        "perfume_probability_min": 3.0888691604502583e-10,
+        "cigarette_probability_max": 0.03533343495625463
+      },
+      "temporal_validation_probability_gap": -0.03533343464736771
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 10.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.3249553470006546,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.5568940873890698,
+        "oof_cigarette_probability_max": 0.09301660661223943,
+        "probability_gap": 0.46387748077683033
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.5568940873890698,
+        "cigarette_probability_max": 0.09301660661223943
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "perfume_accept": 30,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.75,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 36,
+        "total": 46,
+        "accuracy": 0.782608695652174,
+        "perfume_probability_min": 6.536993168992922e-13,
+        "cigarette_probability_max": 0.004592348148766634
+      },
+      "temporal_validation_probability_gap": -0.004592348148112935
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "LogisticRegression",
+      "parameters": {
+        "C": 100.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.3807469129379109,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.7201150059046695,
+        "oof_cigarette_probability_max": 0.041378819971152336,
+        "probability_gap": 0.6787361859335171
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.7201150059046695,
+        "cigarette_probability_max": 0.041378819971152336
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            12,
+            28
+          ]
+        ],
+        "perfume_accept": 28,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.7,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 34,
+        "total": 46,
+        "accuracy": 0.7391304347826086,
+        "perfume_probability_min": 4.884981308350689e-15,
+        "cigarette_probability_max": 0.00037798358260654474
+      },
+      "temporal_validation_probability_gap": -0.00037798358260165976
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 0.1,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5371202539979727,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.5371202539989727,
+        "oof_cigarette_probability_max": 0.9754525957996135,
+        "probability_gap": -0.43833234180064085
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.5371202539989727,
+        "cigarette_probability_max": 0.9754525957996135
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9381557973806226,
+        "cigarette_probability_max": 0.10656673790533691
+      },
+      "temporal_validation_probability_gap": 0.8315890594752857
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 0.1,
+        "gamma": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.7634227002191007,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.7634227002201007,
+        "oof_cigarette_probability_max": 0.764797813502741,
+        "probability_gap": -0.0013751132826402834
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.7634227002201007,
+        "cigarette_probability_max": 0.764797813502741
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.8112162904009679,
+        "cigarette_probability_max": 0.7350012549443632
+      },
+      "temporal_validation_probability_gap": 0.07621503545660469
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 0.1,
+        "gamma": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.6149902302533328,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.6149902302543327,
+        "oof_cigarette_probability_max": 0.9794817464498105,
+        "probability_gap": -0.3644915161954777
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.6149902302543327,
+        "cigarette_probability_max": 0.9794817464498105
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9552937536509948,
+        "cigarette_probability_max": 0.11754033289667803
+      },
+      "temporal_validation_probability_gap": 0.8377534207543167
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 0.1,
+        "gamma": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8637316841037311,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8637316841047311,
+        "oof_cigarette_probability_max": 0.8926769672109182,
+        "probability_gap": -0.028945283106187047
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 5,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.4166666666666667,
+        "correct": 85,
+        "total": 92,
+        "accuracy": 0.9239130434782609,
+        "perfume_probability_min": 0.8637316841047311,
+        "cigarette_probability_max": 0.8926769672109182
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            4,
+            2
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 4,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 0.6666666666666666,
+        "correct": 44,
+        "total": 46,
+        "accuracy": 0.9565217391304348,
+        "perfume_probability_min": 0.8787415617955671,
+        "cigarette_probability_max": 0.8670998399798315
+      },
+      "temporal_validation_probability_gap": 0.011641721815735528
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8129988259827098,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8129988259837098,
+        "oof_cigarette_probability_max": 0.9483861747384265,
+        "probability_gap": -0.1353873487547167
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8129988259837098,
+        "cigarette_probability_max": 0.9483861747384265
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9003590192505835,
+        "cigarette_probability_max": 0.14003188112235257
+      },
+      "temporal_validation_probability_gap": 0.7603271381282309
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.549341285822948,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.6464519325121257,
+        "oof_cigarette_probability_max": 0.4522306391337702,
+        "probability_gap": 0.19422129337835553
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.6464519325121257,
+        "cigarette_probability_max": 0.4522306391337702
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            2,
+            38
+          ]
+        ],
+        "perfume_accept": 38,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.95,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 44,
+        "total": 46,
+        "accuracy": 0.9565217391304348,
+        "perfume_probability_min": 0.4212755212963442,
+        "cigarette_probability_max": 0.18633105881880016
+      },
+      "temporal_validation_probability_gap": 0.23494446247754405
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8377146364063794,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8377146364073794,
+        "oof_cigarette_probability_max": 0.9710000321660786,
+        "probability_gap": -0.13328539575869913
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8377146364073794,
+        "cigarette_probability_max": 0.9710000321660786
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9347301110228465,
+        "cigarette_probability_max": 0.1980158467958336
+      },
+      "temporal_validation_probability_gap": 0.7367142642270129
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.9302687053062664,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.9302687053072664,
+        "oof_cigarette_probability_max": 0.9581612336980067,
+        "probability_gap": -0.0278925283907403
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.9302687053072664,
+        "cigarette_probability_max": 0.9581612336980067
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9469477036685219,
+        "cigarette_probability_max": 0.7130146272744556
+      },
+      "temporal_validation_probability_gap": 0.23393307639406624
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 10.0,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8695510799474118,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8695510799484117,
+        "oof_cigarette_probability_max": 0.9289940074728859,
+        "probability_gap": -0.05944292752447411
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8695510799484117,
+        "cigarette_probability_max": 0.9289940074728859
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.894450128695394,
+        "cigarette_probability_max": 0.08930447119275207
+      },
+      "temporal_validation_probability_gap": 0.8051456575026419
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 10.0,
+        "gamma": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5684953178483136,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.755076050546043,
+        "oof_cigarette_probability_max": 0.3819145851505842,
+        "probability_gap": 0.3731614653954588
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.755076050546043,
+        "cigarette_probability_max": 0.3819145851505842
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            3,
+            37
+          ]
+        ],
+        "perfume_accept": 37,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.925,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 43,
+        "total": 46,
+        "accuracy": 0.9347826086956522,
+        "perfume_probability_min": 0.3156826143236853,
+        "cigarette_probability_max": 0.10000101493329097
+      },
+      "temporal_validation_probability_gap": 0.2156815993903943
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 10.0,
+        "gamma": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8868018894024785,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8868018894034785,
+        "oof_cigarette_probability_max": 0.9639309258429067,
+        "probability_gap": -0.07712903643942826
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8868018894034785,
+        "cigarette_probability_max": 0.9639309258429067
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9303454125841146,
+        "cigarette_probability_max": 0.20063456211526526
+      },
+      "temporal_validation_probability_gap": 0.7297108504688494
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 10.0,
+        "gamma": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.9302660729120055,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.9302660729130054,
+        "oof_cigarette_probability_max": 0.9581610176633725,
+        "probability_gap": -0.027894944750367023
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.9302660729130054,
+        "cigarette_probability_max": 0.9581610176633725
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9469348963524152,
+        "cigarette_probability_max": 0.7132662535352757
+      },
+      "temporal_validation_probability_gap": 0.2336686428171395
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 100.0,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8695510799474118,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8695510799484117,
+        "oof_cigarette_probability_max": 0.92896885238235,
+        "probability_gap": -0.05941777243393831
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8695510799484117,
+        "cigarette_probability_max": 0.92896885238235
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.8944491997256531,
+        "cigarette_probability_max": 0.08938938183287272
+      },
+      "temporal_validation_probability_gap": 0.8050598178927804
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 100.0,
+        "gamma": 0.01
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.6031814204552021,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.8516182444556492,
+        "oof_cigarette_probability_max": 0.354744596454755,
+        "probability_gap": 0.4968736480008942
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.8516182444556492,
+        "cigarette_probability_max": 0.354744596454755
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            8,
+            32
+          ]
+        ],
+        "perfume_accept": 32,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.8,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 38,
+        "total": 46,
+        "accuracy": 0.8260869565217391,
+        "perfume_probability_min": 0.2399556729707671,
+        "cigarette_probability_max": 0.04950858383403917
+      },
+      "temporal_validation_probability_gap": 0.19044708913672792
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 100.0,
+        "gamma": 0.1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8868018894024785,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8868018894034785,
+        "oof_cigarette_probability_max": 0.9639309258429067,
+        "probability_gap": -0.07712903643942826
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8868018894034785,
+        "cigarette_probability_max": 0.9639309258429067
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9303454125841146,
+        "cigarette_probability_max": 0.20063456211526526
+      },
+      "temporal_validation_probability_gap": 0.7297108504688494
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 100.0,
+        "gamma": 1.0
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.9302660729120055,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.9302660729130054,
+        "oof_cigarette_probability_max": 0.9581610176633725,
+        "probability_gap": -0.027894944750367023
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.9302660729130054,
+        "cigarette_probability_max": 0.9581610176633725
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9469348963524152,
+        "cigarette_probability_max": 0.7132662535352757
+      },
+      "temporal_validation_probability_gap": 0.2336686428171395
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.03,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.97535712761825,
+        "oof_cigarette_probability_max": 0.024642872381750003,
+        "probability_gap": 0.9507142552365
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.97535712761825,
+        "cigarette_probability_max": 0.024642872381750003
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.4678704871955096,
+        "cigarette_probability_max": 0.4678704871955096
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.03,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.97535712761825,
+        "oof_cigarette_probability_max": 0.024642872381750003,
+        "probability_gap": 0.9507142552365
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.97535712761825,
+        "cigarette_probability_max": 0.024642872381750003
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.4678704871955096,
+        "cigarette_probability_max": 0.4678704871955096
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.05,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.996689549218735,
+        "oof_cigarette_probability_max": 0.0033104507812650175,
+        "probability_gap": 0.99337909843747
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.996689549218735,
+        "cigarette_probability_max": 0.0033104507812650175
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.3641329341424948,
+        "cigarette_probability_max": 0.3641329341424948
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.05,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.996689549218735,
+        "oof_cigarette_probability_max": 0.0033104507812650175,
+        "probability_gap": 0.99337909843747
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.996689549218735,
+        "cigarette_probability_max": 0.0033104507812650175
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.3958888759443915,
+        "cigarette_probability_max": 0.3958888759443915
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.1,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.49999999999999994,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9999780982686992,
+        "oof_cigarette_probability_max": 2.1901731300677518e-05,
+        "probability_gap": 0.9999561965373985
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9999780982686992,
+        "cigarette_probability_max": 2.1901731300677518e-05
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.24759169620746402,
+        "cigarette_probability_max": 0.24759169620746402
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 100,
+        "learning_rate": 0.1,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.49999999999999994,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9999780982686992,
+        "oof_cigarette_probability_max": 2.1901731300677518e-05,
+        "probability_gap": 0.9999561965373985
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9999780982686992,
+        "cigarette_probability_max": 2.1901731300677518e-05
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.24759169620746402,
+        "cigarette_probability_max": 0.24759169620746402
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.03,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9987735424013408,
+        "oof_cigarette_probability_max": 0.0012264575986592474,
+        "probability_gap": 0.9975470848026815
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9987735424013408,
+        "cigarette_probability_max": 0.0012264575986592474
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.2862605799215522,
+        "cigarette_probability_max": 0.2862605799215522
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.03,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9987735424013408,
+        "oof_cigarette_probability_max": 0.0012264575986592474,
+        "probability_gap": 0.9975470848026815
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9987735424013408,
+        "cigarette_probability_max": 0.0012264575986592474
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.2862605799215522,
+        "cigarette_probability_max": 0.2862605799215522
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9999776962100412,
+        "oof_cigarette_probability_max": 2.2303789958821874e-05,
+        "probability_gap": 0.9999553924200824
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9999776962100412,
+        "cigarette_probability_max": 2.2303789958821874e-05
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.16006265644180695,
+        "cigarette_probability_max": 0.16006265644180695
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9999776962100412,
+        "oof_cigarette_probability_max": 2.2303789958821874e-05,
+        "probability_gap": 0.9999553924200824
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9999776962100412,
+        "cigarette_probability_max": 2.2303789958821874e-05
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.17903251877002813,
+        "cigarette_probability_max": 0.17903251877002813
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 1
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9999999852045478,
+        "oof_cigarette_probability_max": 1.4795452196736392e-08,
+        "probability_gap": 0.9999999704090956
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9999999852045478,
+        "cigarette_probability_max": 1.4795452196736392e-08
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.22943591816496223,
+        "cigarette_probability_max": 0.22943591816496223
+      },
+      "temporal_validation_probability_gap": 0.0
+    },
+    {
+      "feature_mode": "group_zscore",
+      "model_family": "GBT",
+      "parameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 2
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.5,
+        "method": "separated_gap_midpoint",
+        "oof_perfume_probability_min": 0.9999999852045478,
+        "oof_cigarette_probability_max": 1.4795452196736392e-08,
+        "probability_gap": 0.9999999704090956
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            0
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 12,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 1.0,
+        "correct": 92,
+        "total": 92,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9999999852045478,
+        "cigarette_probability_max": 1.4795452196736392e-08
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            39,
+            1
+          ]
+        ],
+        "perfume_accept": 1,
+        "perfume_total": 40,
+        "perfume_accept_rate": 0.025,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 7,
+        "total": 46,
+        "accuracy": 0.15217391304347827,
+        "perfume_probability_min": 0.22943591816496223,
+        "cigarette_probability_max": 0.22943591816496223
+      },
+      "temporal_validation_probability_gap": 0.0
+    }
+  ],
+  "selected_model": {
+    "feature_mode": "group_zscore",
+    "model_family": "RBF-SVM",
+    "parameters": {
+      "C": 1.0,
+      "gamma": "scale"
+    },
+    "temporal_result": {
+      "feature_mode": "group_zscore",
+      "model_family": "RBF-SVM",
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale"
+      },
+      "temporal_training_oof_threshold": {
+        "value": 0.8129988259827098,
+        "method": "protect_all_known_perfumes",
+        "oof_perfume_probability_min": 0.8129988259837098,
+        "oof_cigarette_probability_max": 0.9483861747384265,
+        "probability_gap": -0.1353873487547167
+      },
+      "temporal_training_oof": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            1
+          ],
+          [
+            0,
+            80
+          ]
+        ],
+        "perfume_accept": 80,
+        "perfume_total": 80,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 11,
+        "cigarette_total": 12,
+        "cigarette_reject_rate": 0.9166666666666666,
+        "correct": 91,
+        "total": 92,
+        "accuracy": 0.9891304347826086,
+        "perfume_probability_min": 0.8129988259837098,
+        "cigarette_probability_max": 0.9483861747384265
+      },
+      "temporal_validation": {
+        "class_order": [
+          "香烟",
+          "香水"
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "perfume_accept": 40,
+        "perfume_total": 40,
+        "perfume_accept_rate": 1.0,
+        "cigarette_reject": 6,
+        "cigarette_total": 6,
+        "cigarette_reject_rate": 1.0,
+        "correct": 46,
+        "total": 46,
+        "accuracy": 1.0,
+        "perfume_probability_min": 0.9003590192505835,
+        "cigarette_probability_max": 0.14003188112235257
+      },
+      "temporal_validation_probability_gap": 0.7603271381282309
+    },
+    "full_six_fold_oof_threshold": {
+      "value": 0.8871582366960158,
+      "method": "separated_gap_midpoint",
+      "oof_perfume_probability_min": 0.923485992432044,
+      "oof_cigarette_probability_max": 0.8508304809599876,
+      "probability_gap": 0.0726555114720564
+    },
+    "full_six_fold_oof": {
+      "class_order": [
+        "香烟",
+        "香水"
+      ],
+      "confusion_matrix": [
+        [
+          18,
+          0
+        ],
+        [
+          0,
+          120
+        ]
+      ],
+      "perfume_accept": 120,
+      "perfume_total": 120,
+      "perfume_accept_rate": 1.0,
+      "cigarette_reject": 18,
+      "cigarette_total": 18,
+      "cigarette_reject_rate": 1.0,
+      "correct": 138,
+      "total": 138,
+      "accuracy": 1.0,
+      "perfume_probability_min": 0.923485992432044,
+      "cigarette_probability_max": 0.8508304809599876
+    }
+  },
+  "limitations": [
+    "香水采自0817，香烟采自0821，模型可能学习到部分日期漂移。",
+    "六折OOF阈值用于内部选型，不等同于新日期独立测试。",
+    "本轮不包含咖啡等未知气味的开集拒识。"
+  ],
+  "output_files": {
+    "model": "outputs\\0821_perfume_cigarette_cascade_c1\\model.joblib",
+    "class_map": "outputs\\0821_perfume_cigarette_cascade_c1\\class_map.json",
+    "runtime_config": "outputs\\0821_perfume_cigarette_cascade_c1\\runtime_config.json",
+    "cascade_definition": "outputs\\0821_perfume_cigarette_cascade_c1\\cascade_definition.json"
+  },
+  "model_sha256": "bfd93204e92e4cc0ece3243368967c9f88c90ae7747e6b0421b74c2e03fc356e"
+}

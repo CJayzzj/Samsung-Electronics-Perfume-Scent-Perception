@@ -1,0 +1,1 @@
+{"schema":"enose.runtime.v1","protocol_version":1,"type":"recovery","timestamp_ms":1786000062000,"device_id":"回流1","event_id":"回流1-E000031","source_timestamp_ms":1786000062000,"status":"complete","recovery_time_s":34.0,"current_score":4.28,"dominant_sensor":11,"deviation_ratio":0.072}

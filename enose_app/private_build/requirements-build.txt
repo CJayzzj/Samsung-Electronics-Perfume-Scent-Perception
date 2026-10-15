@@ -1,0 +1,4 @@
+-r requirements-runtime.txt
+nuitka>=2.7,<3
+ordered-set>=4.1,<5
+zstandard>=0.22,<1

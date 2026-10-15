@@ -1,0 +1,23 @@
+{
+  "schema": "enose.class_map.v1",
+  "model_id": "samsung-perfume-20260817-full-glnm-resp-pattern-gbt-v1",
+  "unknown_label": "异味",
+  "classes": [
+    {
+      "label": "GETARIA",
+      "class_code": "P01"
+    },
+    {
+      "label": "LEDIX",
+      "class_code": "P02"
+    },
+    {
+      "label": "NO-CO",
+      "class_code": "P03"
+    },
+    {
+      "label": "MUSCARA",
+      "class_code": "P04"
+    }
+  ]
+}

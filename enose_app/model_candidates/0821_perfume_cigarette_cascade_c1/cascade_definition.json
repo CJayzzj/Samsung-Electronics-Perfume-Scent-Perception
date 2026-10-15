@@ -1,0 +1,97 @@
+{
+  "schema": "enose.cascade_definition.v1",
+  "model_id": "samsung-cascade-20260821-gz-rbf-svm-c1-full-day-gbt-v1",
+  "created_at": "2026-08-21T17:06:13+08:00",
+  "flow": [
+    "signal_gate",
+    "perfume_or_cigarette_rbf_svm",
+    "perfume_four_class_gbt"
+  ],
+  "closed_binary": {
+    "enabled": true,
+    "feature_spec": {
+      "mode": "group_zscore_resp",
+      "sensor_count": 16,
+      "feature_columns": [
+        "group_zscore_resp_Sensor1",
+        "group_zscore_resp_Sensor2",
+        "group_zscore_resp_Sensor3",
+        "group_zscore_resp_Sensor4",
+        "group_zscore_resp_Sensor5",
+        "group_zscore_resp_Sensor6",
+        "group_zscore_resp_Sensor7",
+        "group_zscore_resp_Sensor8",
+        "group_zscore_resp_Sensor9",
+        "group_zscore_resp_Sensor10",
+        "group_zscore_resp_Sensor11",
+        "group_zscore_resp_Sensor12",
+        "group_zscore_resp_Sensor13",
+        "group_zscore_resp_Sensor14",
+        "group_zscore_resp_Sensor15",
+        "group_zscore_resp_Sensor16"
+      ],
+      "material_groups": [
+        [
+          1,
+          4
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          13,
+          16
+        ]
+      ],
+      "formula": "每4路组内执行(resp-组均值)/组标准差(ddof=0)"
+    },
+    "perfume_label": "香水",
+    "cigarette_label": "香烟",
+    "output_label": "异味",
+    "cigarette_class_code": "O01",
+    "perfume_probability_threshold": 0.8871582366960158,
+    "threshold_method": "separated_gap_midpoint",
+    "classifier": {
+      "name": "SVC",
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": "scale",
+      "class_weight": "balanced",
+      "probability": true,
+      "random_state": 42
+    }
+  },
+  "perfume_classes": [
+    {
+      "label": "GETARIA",
+      "class_code": "P01"
+    },
+    {
+      "label": "LEDIX",
+      "class_code": "P02"
+    },
+    {
+      "label": "NO-CO",
+      "class_code": "P03"
+    },
+    {
+      "label": "MUSCARA",
+      "class_code": "P04"
+    }
+  ],
+  "cigarette_output": {
+    "label": "异味",
+    "source_training_label": "香烟",
+    "class_code": "O01",
+    "decision_stage": "closed_binary"
+  },
+  "open_set": {
+    "enabled": false,
+    "note": "咖啡等未知气味本轮不参与训练，也不承诺拒识效果。"
+  }
+}

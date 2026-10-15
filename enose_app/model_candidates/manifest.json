@@ -1,0 +1,69 @@
+{
+  "schema": "enose.model_profiles.v1",
+  "model_export_environment": {
+    "python": "3.9.13",
+    "numpy": "1.24.4",
+    "scikit_learn": "1.0.2",
+    "joblib": "1.1.0"
+  },
+  "recommended_initial_profile": "perfume_cigarette_cascade",
+  "selection_note": "当前实时联调使用香水/香烟闭集SVM加全天香水GBT级联；咖啡等未知异味开集拒识仍未启用。",
+  "profiles": [
+    {
+      "name": "morning_gbt",
+      "directory": "0817_morning_gbt",
+      "model_id": "samsung-perfume-20260817-glnm-resp-pattern-gbt-v3",
+      "method": "16路resp + 16路pattern + GBT",
+      "training_samples": 80,
+      "internal_5fold_accuracy": 0.975,
+      "independent_afternoon_accuracy": 0.975,
+      "model_sha256": "7071a5b35498a5098243613d46f77507dc2823400e85cfd715bde64c7d705f2b"
+    },
+    {
+      "name": "full_day_gbt",
+      "directory": "0817_full_day_gbt",
+      "model_id": "samsung-perfume-20260817-full-glnm-resp-pattern-gbt-v1",
+      "method": "16路resp + 16路pattern + GBT",
+      "training_samples": 120,
+      "internal_5fold_accuracy": 0.9833333333333333,
+      "independent_afternoon_accuracy": null,
+      "model_sha256": "67a0c1a7d74098312a789ec004523e16709b898d2849c9a6650b3434dd2cfcd2"
+    },
+    {
+      "name": "full_day_score",
+      "directory": "0817_full_day_score",
+      "model_id": "samsung-perfume-20260817-full-glnm-mean16-score-v1",
+      "method": "100 × mean(abs(resp1..16)) + 三阈值",
+      "training_samples": 120,
+      "internal_5fold_accuracy": 0.9666666666666667,
+      "independent_afternoon_accuracy": 0.95,
+      "model_sha256": "197fce5548624c60f6d9412e967989022a0333dfb07379c0a7fcb7efb9b49521"
+    },
+    {
+      "name": "perfume_cigarette_cascade",
+      "directory": "0821_perfume_cigarette_cascade",
+      "model_id": "samsung-cascade-20260821-gz-rbf-svm-c10-full-day-gbt-v1",
+      "method": "16路group_zscore + RBF-SVM香水/香烟闭集判断 + resp/pattern GBT香水四分类",
+      "training_samples": 138,
+      "internal_6fold_oof_accuracy": 1.0,
+      "temporal_holdout_accuracy": 1.0,
+      "perfume_accept": "120/120",
+      "cigarette_reject": "18/18",
+      "open_set_enabled": false,
+      "model_sha256": "6a134e8c81d0a97da9b52634e985f533732a0db9579aeb9af432fc7b72287e25"
+    },
+    {
+      "name": "perfume_cigarette_cascade_c1",
+      "directory": "0821_perfume_cigarette_cascade_c1",
+      "model_id": "samsung-cascade-20260821-gz-rbf-svm-c1-full-day-gbt-v1",
+      "method": "16路group_zscore + RBF-SVM(C=1)香水/香烟闭集判断 + resp/pattern GBT香水四分类",
+      "training_samples": 138,
+      "internal_6fold_oof_accuracy": 1.0,
+      "temporal_holdout_accuracy": 1.0,
+      "perfume_accept": "120/120",
+      "cigarette_reject": "18/18",
+      "open_set_enabled": false,
+      "model_sha256": "bfd93204e92e4cc0ece3243368967c9f88c90ae7747e6b0421b74c2e03fc356e"
+    }
+  ]
+}
